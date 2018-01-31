@@ -8,25 +8,25 @@ namespace UnitTestProject
     public class MCTests
     {
         [TestMethod]
-        public void MCPrisEr125()
+        public void MCPrisEr125Test()
         {
             // Arrange
-            MC Suzuki = new MC();
+            MC suzuki = new MC();
             // Act
-            int pris = Suzuki.Pris();
+            int pris = suzuki.Pris();
             // Assert
             Assert.AreEqual(125, pris);
         }
 
         [TestMethod]
-        public void MCKøretøjTest()
+        public void MCKøretøjTypeTest()
         {
             // Arrange
-            MC Honda = new MC();
+            MC honda = new MC();
             // Act
-            string køretøj = Honda.Køretøj();
+            string typeAfKøretøj = honda.TypeAfKøretøj();
             // Assert
-            Assert.AreEqual("MC", køretøj);
+            Assert.AreEqual("MC", typeAfKøretøj);
         }
     }
 }

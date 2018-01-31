@@ -11,22 +11,22 @@ namespace UnitTestProject
         public void BilPris240Test()
         {
             // Arrange
-            Bil Opel = new Bil();
+            Bil opel = new Bil();
             // Act
-            int pris = Opel.Pris();
+            int pris = opel.Pris();
             // Assert
             Assert.AreEqual(240, pris);
         }
 
         [TestMethod]
-        public void BilKøretøjTest()
+        public void BilKøretøjTypeTest()
         {
             // Arrange
-            Bil Toyota = new Bil();
+            Bil toyota = new Bil();
             // Act
-            string køretøj = Toyota.Køretøj();
+            string typeAfKøretøj = toyota.TypeAfKøretøj();
             // Assert
-            Assert.AreEqual("Bil", køretøj);
+            Assert.AreEqual("Bil", typeAfKøretøj);
         }
     }
 }

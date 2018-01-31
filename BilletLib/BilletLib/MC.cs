@@ -2,17 +2,17 @@
 
 namespace BilletLib
 {
-    public class MC
+    public class MC : Vehicle
     {
-        public string Nummerplade { get; set; }
-        public DateTime Dato { get; set; }
+        public override string Nummerplade { get; }
+        public override DateTime Dato { get; }
 
-        public int Pris()
+        public override int Pris()
         {
             return 125;
         }
 
-        public string Køretøj()
+        public override string TypeAfKøretøj()
         {
             return "MC";
         }
