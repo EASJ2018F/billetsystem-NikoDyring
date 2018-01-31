@@ -10,10 +10,16 @@ namespace BilletLib
     public class Bil : Vehicle
     {
         public override string Nummerplade { get; set; }
-        public override DateTime Dato { get; }
+        public override DateTime Dato { get; set; }
+        public override bool BrobizzBrugt { get; set; }
+        public override bool WeekendRabat { get; set; }
 
         public override int Pris()
         {
+            if (BrobizzBrugt)
+            {
+                return 5 * 240 / 100 + 240;
+            }
             return 240;
         }
 

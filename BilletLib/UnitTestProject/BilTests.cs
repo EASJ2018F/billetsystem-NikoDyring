@@ -13,7 +13,7 @@ namespace UnitTestProject
             // Arrange
             Bil opel = new Bil();
             // Act
-            int pris = opel.Pris();
+            double pris = opel.Pris();
             // Assert
             Assert.AreEqual(240, pris);
         }
@@ -40,5 +40,29 @@ namespace UnitTestProject
             // Assert
             Assert.AreEqual(8, bil3.LængdeAfNummerplade());
         }
+
+        [TestMethod]
+        public void BilNummerpladeTest()
+        {
+            // Arrange
+            Bil bil4 = new Bil();
+            // Act
+            bil4.Nummerplade = "12345";
+            // Assert
+            Assert.AreEqual(5, bil4.LængdeAfNummerplade());
+        }
+
+        [TestMethod]
+        public void BilBrobizzBrugtTest()
+        {
+            // Arrange
+            Bil bil5 = new Bil();
+            // Act
+            bil5.BrobizzBrugt = true;
+            // Assert
+            Assert.AreEqual(252,bil5.Pris());
+        }
+
+
     }
 }
