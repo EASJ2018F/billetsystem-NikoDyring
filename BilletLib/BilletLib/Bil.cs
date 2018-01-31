@@ -9,7 +9,7 @@ namespace BilletLib
 {
     public class Bil : Vehicle
     {
-        public override string Nummerplade { get; }
+        public override string Nummerplade { get; set; }
         public override DateTime Dato { get; }
 
         public override int Pris()
@@ -21,5 +21,23 @@ namespace BilletLib
         {
             return "Bil";
         }
+
+        public override int LængdeAfNummerplade()
+        {
+            if (Nummerplade.Length > 7)
+            {
+                throw new ArgumentException("Nummerplade for lang.");
+            }
+
+            return Nummerplade.Length;
+        }
+
+
+        public Bil()
+        {
+
+        }
+
+
     }
 }

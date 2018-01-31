@@ -28,5 +28,17 @@ namespace UnitTestProject
             // Assert
             Assert.AreEqual("Bil", typeAfKøretøj);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void BilNummerpladeLængdeTest()
+        {
+            // Arrange
+            Bil bil3 = new Bil();
+            // Act
+            bil3.Nummerplade = "12345678";
+            // Assert
+            Assert.AreEqual(8, bil3.LængdeAfNummerplade());
+        }
     }
 }
