@@ -100,7 +100,7 @@ namespace UnitTestProject
             // Act
             bil6.WeekendRabat = true;
             // Assert
-            Assert.AreEqual(192, bil6.Pris());
+            Assert.AreEqual(192, bil6.WeekendRabatIBil());
         }
 
         [TestMethod]
@@ -109,10 +109,11 @@ namespace UnitTestProject
             // Arrange
             Bil bil7 = new Bil();
             // Act
-            bil7.WeekendRabat = true;
+            bil7.Dato = DayOfWeek.Saturday;
             bil7.BrobizzBrugt = true;
+            
             // Assert
-            Assert.AreEqual(180, bil7.Pris());
+            Assert.AreEqual(180, bil7.WeekendRabatIBil());
         }
 
         [TestMethod]
@@ -157,7 +158,7 @@ namespace UnitTestProject
             // Act
             bil11.Dato = DayOfWeek.Saturday;
             // Assert
-            Assert.AreEqual(192, bil11.Pris());
+            Assert.AreEqual(192, bil11.WeekendRabatIBil());
         }
     }
 }

@@ -17,47 +17,22 @@ namespace BilletLib
         public int Pris()
         {
 
-            if (TypeAfKøretøj() == "Bil")
+            switch (TypeAfKøretøj())
             {
-                VehiclePrice = 240;
-            }
-            else if (TypeAfKøretøj() == "MC")
-            {
-                VehiclePrice = 125;
-            }
-            else if (TypeAfKøretøj() == "Øresund Bil")
-            {
-                VehiclePrice = 410;
-                Øresundsbroen = true;
-            }
-            else if (TypeAfKøretøj() == "Øresund MC")
-            {
-                VehiclePrice = 210;
-                Øresundsbroen = true;
+                case "Bil":
+                    VehiclePrice = 240;
+                    break;
+                case "MC":
+                    VehiclePrice = 125;
+                    break;
+                case "Øresund Bil":
+                    VehiclePrice = 410;
+                    break;
+                case "Øresund MC":
+                    VehiclePrice = 210;
+                    break;
             }
 
-
-            switch (Dato)
-            {
-                case DayOfWeek.Friday:
-                    if (!Øresundsbroen)
-                    {
-                        WeekendRabat = true;
-                    }
-                    break;
-                case DayOfWeek.Saturday:
-                    if (!Øresundsbroen)
-                    {
-                        WeekendRabat = true;
-                    }
-                    break;
-                case DayOfWeek.Sunday:
-                    if (!Øresundsbroen)
-                    {
-                        WeekendRabat = true;
-                    }
-                    break;
-            }
 
             if (BrobizzBrugt && Øresundsbroen)
             {
@@ -72,11 +47,6 @@ namespace BilletLib
                 return VehiclePrice;
             }
 
-            if (WeekendRabat && BrobizzBrugt && !Øresundsbroen)
-            {
-                return VehiclePrice - (20 * VehiclePrice / 100) - (5 * VehiclePrice / 100);
-            }
-
             if (Øresundsbroen)
             {
                 return VehiclePrice;
@@ -85,11 +55,6 @@ namespace BilletLib
             if (BrobizzBrugt && !Øresundsbroen)
             {
                 return VehiclePrice - (5 * VehiclePrice / 100);
-            }
-
-            if (WeekendRabat)
-            {
-                return VehiclePrice - (20 * VehiclePrice / 100);
             }
             return VehiclePrice;
 

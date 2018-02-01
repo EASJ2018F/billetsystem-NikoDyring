@@ -80,29 +80,6 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void McWeekendRabatTest()
-        {
-            // Arrange
-            MC mc6 = new MC();
-            // Act
-            mc6.WeekendRabat = true;
-            // Assert
-            Assert.AreEqual(100, mc6.Pris());
-        }
-
-        [TestMethod]
-        public void McWeekendPlusBrobizzRabat()
-        {
-            // Arrange
-            MC mc7 = new MC();
-            // Act
-            mc7.WeekendRabat = true;
-            mc7.BrobizzBrugt = true;
-            // Assert
-            Assert.AreEqual(94, mc7.Pris());
-        }
-
-        [TestMethod]
         public void McØresundTest()
         {
             // Arrange

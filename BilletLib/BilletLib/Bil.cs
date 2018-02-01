@@ -28,7 +28,7 @@ namespace BilletLib
 
         public override int LængdeAfNummerplade()
         {
-            if (Nummerplade.Length > 7)
+            if (Nummerplade.Length > 7 || Nummerplade.Length < 0)
             {
                 throw new ArgumentException("Nummerplade for lang.");
             }
@@ -36,12 +36,48 @@ namespace BilletLib
             return Nummerplade.Length;
         }
 
+        public int WeekendRabatIBil()
+        {
+            if (!Øresundsbroen)
+            {
+                VehiclePrice = 240;
+            }
+            switch (Dato)
+            {
+                case DayOfWeek.Saturday:
+                    if (!Øresundsbroen)
+                    {
+                        WeekendRabat = true;
+                    }
+                    break;
+                case DayOfWeek.Sunday:
+                    if (!Øresundsbroen)
+                    {
+                        WeekendRabat = true;
+                    }
+                    break;
+            }
+
+            if (WeekendRabat && BrobizzBrugt && !Øresundsbroen)
+            {
+                return VehiclePrice - (20 * VehiclePrice / 100) - (5 * VehiclePrice / 100);
+            }
+
+            if (WeekendRabat)
+            {
+                return VehiclePrice - (20 * VehiclePrice / 100);
+            }
+
+            return VehiclePrice;
+        }
 
         public Bil()
         {
             Dato = DateTime.Now.DayOfWeek;
             BrobizzBrugt = false;
             WeekendRabat = false;
+            Øresundsbroen = false;
+            
         }
 
 
