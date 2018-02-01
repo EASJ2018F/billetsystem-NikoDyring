@@ -35,14 +35,19 @@ namespace BilletLib
                 Øresundsbroen = true;
             }
 
-
-            Dato = DateTime.Now.DayOfWeek;
-
-            if (Dato == DayOfWeek.Friday || Dato == DayOfWeek.Saturday || Dato == DayOfWeek.Sunday && !Øresundsbroen)
+            //if (Dato == DateTime.Now.DayOfWeek )
+            switch (Dato)
             {
-                WeekendRabat = true;
+                case DayOfWeek.Friday:
+                    WeekendRabat = true;
+                    break;
+                case DayOfWeek.Saturday:
+                    WeekendRabat = true;
+                    break;
+                case DayOfWeek.Sunday:
+                    WeekendRabat = true;
+                    break;
             }
-
 
             if (BrobizzBrugt && Øresundsbroen)
             {

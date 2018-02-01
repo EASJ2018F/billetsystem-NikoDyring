@@ -12,10 +12,8 @@ namespace UnitTestProject
         {
             // Arrange
             Bil opel = new Bil();
-            // Act
-            double pris = opel.Pris();
             // Assert
-            Assert.AreEqual(240, pris);
+            Assert.AreEqual(240, opel.Pris());
         }
 
         [TestMethod]
@@ -126,8 +124,7 @@ namespace UnitTestProject
             // Arrange
             Bil bil11 = new Bil();
             // Act
-            bil11.Øresundsbroen = false;
-            bil11.Dato = DayOfWeek.Friday;
+            bil11.Dato = DayOfWeek.Saturday;
             // Assert
             Assert.AreEqual(192, bil11.Pris());
         }
