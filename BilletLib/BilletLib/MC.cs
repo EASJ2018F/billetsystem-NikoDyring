@@ -30,5 +30,12 @@ namespace BilletLib
 
             return Nummerplade.Length;
         }
+
+        public MC()
+        {
+            Dato = DateTime.Now.DayOfWeek;
+            BrobizzBrugt = false;
+            WeekendRabat = false;
+        }
     }
 }

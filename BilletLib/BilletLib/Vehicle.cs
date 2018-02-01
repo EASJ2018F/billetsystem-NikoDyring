@@ -16,7 +16,6 @@ namespace BilletLib
 
         public int Pris()
         {
-            Dato = DateTime.Now.DayOfWeek;
 
             if (TypeAfKøretøj() == "Bil")
             {

@@ -39,7 +39,9 @@ namespace BilletLib
 
         public Bil()
         {
-
+            Dato = DateTime.Now.DayOfWeek;
+            BrobizzBrugt = false;
+            WeekendRabat = false;
         }
 
 
