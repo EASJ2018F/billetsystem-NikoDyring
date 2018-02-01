@@ -60,9 +60,31 @@ namespace UnitTestProject
             // Act
             bil5.BrobizzBrugt = true;
             // Assert
-            Assert.AreEqual(252,bil5.Pris());
+            Assert.AreEqual(228,bil5.Pris());
         }
 
+        [TestMethod]
+        public void BilWeekendRabatTest()
+        {
+            // Arrange
+            Bil bil6 = new Bil();
+            // Act
+            bil6.WeekendRabat = true;
+            // Assert
+            Assert.AreEqual(192, bil6.Pris());
+        }
+
+        [TestMethod]
+        public void BilWeekendPlusBrobizzRabat()
+        {
+            // Arrange
+            Bil bil7 = new Bil();
+            // Act
+            bil7.WeekendRabat = true;
+            bil7.BrobizzBrugt = true;
+            // Assert
+            Assert.AreEqual(180, bil7.Pris());
+        }
 
     }
 }

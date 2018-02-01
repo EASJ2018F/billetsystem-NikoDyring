@@ -11,9 +11,25 @@ namespace BilletLib
 
         public override int Pris()
         {
+
+            DayOfWeek dagenIDag = DateTime.Now.DayOfWeek;
+
+            if((dagenIDag == DayOfWeek.Friday) || (dagenIDag == DayOfWeek.Saturday) || (dagenIDag == DayOfWeek.Sunday))
+            {
+                WeekendRabat = true;
+            }
+
+            if(WeekendRabat && BrobizzBrugt)
+            {
+                return 125 - (5 * 125 / 100) - (20 * 125 / 100);
+            }
+
             if (BrobizzBrugt)
             {
-                return 5 * 125 / 100 + 125;
+                return 125 - (5 * 125 / 100);
+            } else if(WeekendRabat)
+            {
+                return 125 - (20 * 125 / 100);
             }
             return 125;
         }

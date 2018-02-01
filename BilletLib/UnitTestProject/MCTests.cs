@@ -59,7 +59,30 @@ namespace UnitTestProject
             // Act
             mc5.BrobizzBrugt = true;
             // Assert
-            Assert.AreEqual(131, mc5.Pris());
+            Assert.AreEqual(119, mc5.Pris());
+        }
+
+        [TestMethod]
+        public void McWeekendRabatTest()
+        {
+            // Arrange
+            MC mc6 = new MC();
+            // Act
+            mc6.WeekendRabat = true;
+            // Assert
+            Assert.AreEqual(100, mc6.Pris());
+        }
+
+        [TestMethod]
+        public void McWeekendPlusBrobizzRabat()
+        {
+            // Arrange
+            MC mc7 = new MC();
+            // Act
+            mc7.WeekendRabat = true;
+            mc7.BrobizzBrugt = true;
+            // Assert
+            Assert.AreEqual(94, mc7.Pris());
         }
     }
 }

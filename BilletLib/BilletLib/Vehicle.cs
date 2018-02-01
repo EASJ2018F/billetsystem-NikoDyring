@@ -12,6 +12,7 @@ namespace BilletLib
         public abstract int Pris();
         public abstract string TypeAfKøretøj();
         public abstract int LængdeAfNummerplade();
+        
 
 
     }
