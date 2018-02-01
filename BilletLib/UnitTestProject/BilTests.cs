@@ -60,7 +60,7 @@ namespace UnitTestProject
             // Act
             bil5.BrobizzBrugt = true;
             // Assert
-            Assert.AreEqual(228,bil5.Pris());
+            Assert.AreEqual(228, bil5.Pris());
         }
 
         [TestMethod]
@@ -118,6 +118,18 @@ namespace UnitTestProject
             bil10.Øresundsbroen = true;
             // Assert
             Assert.AreEqual("Øresund Bil", bil10.TypeAfKøretøj());
+        }
+
+        [TestMethod]
+        public void BilWeekendRabatDateTest()
+        {
+            // Arrange
+            Bil bil11 = new Bil();
+            // Act
+            bil11.Øresundsbroen = false;
+            bil11.Dato = DayOfWeek.Friday;
+            // Assert
+            Assert.AreEqual(192, bil11.Pris());
         }
     }
 }
