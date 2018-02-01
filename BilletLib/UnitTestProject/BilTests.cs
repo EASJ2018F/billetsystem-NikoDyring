@@ -160,5 +160,17 @@ namespace UnitTestProject
             // Assert
             Assert.AreEqual(192, bil11.WeekendRabatIBil());
         }
+
+        [TestMethod]
+        public void BilWeekendRabatBrobissTest()
+        {
+            Bil bil12 = new Bil();
+
+            bil12.Dato = DayOfWeek.Saturday;
+            bil12.BrobizzBrugt = true;
+            bil12.WeekendRabat = true;
+
+            Assert.AreEqual(183, bil12.WeekendRabatIBil());
+        }
     }
 }

@@ -58,9 +58,12 @@ namespace BilletLib
                     break;
             }
 
+            int mellemRegning = 0;
             if (WeekendRabat && BrobizzBrugt && !Øresundsbroen)
             {
-                return VehiclePrice - (20 * VehiclePrice / 100) - (5 * VehiclePrice / 100);
+                mellemRegning = VehiclePrice - (20 * VehiclePrice / 100);
+                VehiclePrice = mellemRegning - (5 * mellemRegning / 100);
+                return VehiclePrice;
             }
 
             if (WeekendRabat)
@@ -77,7 +80,7 @@ namespace BilletLib
             BrobizzBrugt = false;
             WeekendRabat = false;
             Øresundsbroen = false;
-            
+
         }
 
 
