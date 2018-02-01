@@ -13,7 +13,7 @@ namespace UnitTestProject
             // Arrange
             MC suzuki = new MC();
             // Act
-            double pris = suzuki.Pris();
+            double pris = suzuki.Pris(125);
             // Assert
             Assert.AreEqual(125, pris);
         }
@@ -59,7 +59,7 @@ namespace UnitTestProject
             // Act
             mc5.BrobizzBrugt = true;
             // Assert
-            Assert.AreEqual(119, mc5.Pris());
+            Assert.AreEqual(119, mc5.Pris(125));
         }
 
         [TestMethod]
@@ -70,7 +70,7 @@ namespace UnitTestProject
             // Act
             mc6.WeekendRabat = true;
             // Assert
-            Assert.AreEqual(100, mc6.Pris());
+            Assert.AreEqual(100, mc6.Pris(125));
         }
 
         [TestMethod]
@@ -82,7 +82,42 @@ namespace UnitTestProject
             mc7.WeekendRabat = true;
             mc7.BrobizzBrugt = true;
             // Assert
-            Assert.AreEqual(94, mc7.Pris());
+            Assert.AreEqual(94, mc7.Pris(125));
         }
+
+        [TestMethod]
+        public void McØresundTest()
+        {
+            // Arrange
+            MC mc8 = new MC();
+            // Act
+            mc8.Øresundsbroen = true;
+            // Assert
+            Assert.AreEqual(210, mc8.Pris(210));
+        }
+
+        [TestMethod]
+        public void McBrobizzØresundTest()
+        {
+            // Arrange
+            MC mc9 = new MC();
+            // Act
+            mc9.Øresundsbroen = true;
+            mc9.BrobizzBrugt = true;
+            // Assert
+            Assert.AreEqual(73, mc9.Pris(210));
+        }
+
+        [TestMethod]
+        public void McTypeAfKøretøjØresundTest()
+        {
+            // Arrange
+            MC mc10 = new MC();
+            // Act
+            mc10.Øresundsbroen = true;
+            // Assert
+            Assert.AreEqual("Øresund MC", mc10.TypeAfKøretøj());
+        }
+
     }
 }

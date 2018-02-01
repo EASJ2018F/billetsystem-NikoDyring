@@ -13,7 +13,7 @@ namespace UnitTestProject
             // Arrange
             Bil opel = new Bil();
             // Act
-            double pris = opel.Pris();
+            double pris = opel.Pris(240);
             // Assert
             Assert.AreEqual(240, pris);
         }
@@ -60,7 +60,7 @@ namespace UnitTestProject
             // Act
             bil5.BrobizzBrugt = true;
             // Assert
-            Assert.AreEqual(228,bil5.Pris());
+            Assert.AreEqual(228,bil5.Pris(240));
         }
 
         [TestMethod]
@@ -71,7 +71,7 @@ namespace UnitTestProject
             // Act
             bil6.WeekendRabat = true;
             // Assert
-            Assert.AreEqual(192, bil6.Pris());
+            Assert.AreEqual(192, bil6.Pris(240));
         }
 
         [TestMethod]
@@ -83,8 +83,41 @@ namespace UnitTestProject
             bil7.WeekendRabat = true;
             bil7.BrobizzBrugt = true;
             // Assert
-            Assert.AreEqual(180, bil7.Pris());
+            Assert.AreEqual(180, bil7.Pris(240));
         }
 
+        [TestMethod]
+        public void McØresundTest()
+        {
+            // Arrange
+            Bil bil8 = new Bil();
+            // Act
+            bil8.Øresundsbroen = true;
+            // Assert
+            Assert.AreEqual(410, bil8.Pris(410));
+        }
+
+        [TestMethod]
+        public void BilBrobizzØresundTest()
+        {
+            // Arrange
+            Bil bil9 = new Bil();
+            // Act
+            bil9.Øresundsbroen = true;
+            bil9.BrobizzBrugt = true;
+            // Assert
+            Assert.AreEqual(161, bil9.Pris(410));
+        }
+
+        [TestMethod]
+        public void BilTypeAfKøretøjØresundTest()
+        {
+            // Arrange
+            Bil bil10 = new Bil();
+            // Act
+            bil10.Øresundsbroen = true;
+            // Assert
+            Assert.AreEqual("Øresund Bil", bil10.TypeAfKøretøj());
+        }
     }
 }
