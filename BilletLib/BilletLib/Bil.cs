@@ -15,7 +15,7 @@ namespace BilletLib
         public override bool WeekendRabat { get; set; }
         public override bool Øresundsbroen { get; set; }
 
-        public override int Pris(int pris)
+        public override int Pris()
         {
             Dato = DateTime.Now.DayOfWeek;
 
@@ -24,27 +24,31 @@ namespace BilletLib
                 WeekendRabat = true;
             }
 
+
             if (BrobizzBrugt && Øresundsbroen)
             {
-                pris = 161;
-                return pris;
+                return 161;
             }
 
             if (WeekendRabat && BrobizzBrugt && !Øresundsbroen)
             {
-                return pris - (5 * pris / 100) - (20 * pris / 100);
+                return 240 - (5 * 240 / 100) - (20 * 240 / 100);
             }
 
+            if(Øresundsbroen)
+            {
+                return 410;
+            }
 
             if (BrobizzBrugt && !Øresundsbroen)
             {
-                return pris - (5 * pris / 100);
+                return 240 - (5 * 240 / 100);
             }
             else if (WeekendRabat)
             {
-                return pris - (20 * pris / 100);
+                return 240 - (20 * 240 / 100);
             }
-            return pris;
+            return 240;
         }
 
         public override string TypeAfKøretøj()
