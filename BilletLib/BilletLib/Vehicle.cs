@@ -16,6 +16,8 @@ namespace BilletLib
 
         public int Pris()
         {
+            Dato = DateTime.Now.DayOfWeek;
+
             if (TypeAfKøretøj() == "Bil")
             {
                 VehiclePrice = 240;
@@ -35,17 +37,26 @@ namespace BilletLib
                 Øresundsbroen = true;
             }
 
-            //if (Dato == DateTime.Now.DayOfWeek )
+
             switch (Dato)
             {
                 case DayOfWeek.Friday:
-                    WeekendRabat = true;
+                    if (!Øresundsbroen)
+                    {
+                        WeekendRabat = true;
+                    }
                     break;
                 case DayOfWeek.Saturday:
-                    WeekendRabat = true;
+                    if (!Øresundsbroen)
+                    {
+                        WeekendRabat = true;
+                    }
                     break;
                 case DayOfWeek.Sunday:
-                    WeekendRabat = true;
+                    if (!Øresundsbroen)
+                    {
+                        WeekendRabat = true;
+                    }
                     break;
             }
 

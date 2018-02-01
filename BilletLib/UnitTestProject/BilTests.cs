@@ -12,8 +12,28 @@ namespace UnitTestProject
         {
             // Arrange
             Bil opel = new Bil();
+            // Act
+            double pris = opel.Pris();
+            double discountedPris = 0;
+            if (opel.WeekendRabat)
+            {
+                discountedPris = opel.Pris();
+            }
+            else if (!opel.WeekendRabat)
+            {
+                pris = opel.Pris();
+            }
+
             // Assert
-            Assert.AreEqual(240, opel.Pris());
+            if (opel.WeekendRabat)
+            {
+                Assert.AreEqual(192, discountedPris);
+            }
+            else
+            {
+                Assert.AreEqual(240, pris);
+            }
+
         }
 
         [TestMethod]
@@ -58,7 +78,18 @@ namespace UnitTestProject
             // Act
             bil5.BrobizzBrugt = true;
             // Assert
-            Assert.AreEqual(228, bil5.Pris());
+
+            if (bil5.WeekendRabat)
+            {
+                Assert.AreEqual(180, bil5.Pris());
+            }
+
+            if (!bil5.WeekendRabat) 
+            {
+                Assert.AreEqual(228, bil5.Pris());
+            }
+
+
         }
 
         [TestMethod]
