@@ -10,7 +10,7 @@ namespace BilletLib
     public class Bil : Vehicle
     {
         public override string Nummerplade { get; set; }
-        public override DayOfWeek Dato { get; set; }
+        public DayOfWeek Dato { get; set; }
         public override bool BrobizzBrugt { get; set; }
         public bool WeekendRabat { get; set; }
         public override bool Øresundsbroen { get; set; }

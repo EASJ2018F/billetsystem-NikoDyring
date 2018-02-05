@@ -170,6 +170,15 @@ namespace UnitTestProject
         }
 
         [TestMethod]
+        public void BilWeekendRabatFalse()
+        {
+            Bil testBil = new Bil();
+            testBil.WeekendRabat = false;
+            Assert.AreEqual(240, testBil.WeekendRabatIBil());
+        }
+
+
+        [TestMethod]
         public void BilWeekendRabatBrobissTest()
         {
             Bil bil12 = new Bil();

@@ -6,7 +6,6 @@ namespace BilletLib
     {
 
         public override string Nummerplade { get; set; }
-        public override DayOfWeek Dato { get; set; }
         public override bool BrobizzBrugt { get; set; }
         public override bool Øresundsbroen { get; set; }
         public override int VehiclePrice { get; set; }
@@ -33,7 +32,6 @@ namespace BilletLib
 
         public MC()
         {
-            Dato = DateTime.Now.DayOfWeek;
             BrobizzBrugt = false;
         }
     }
