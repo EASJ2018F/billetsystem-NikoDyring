@@ -14,25 +14,9 @@ namespace UnitTestProject
             MC suzuki = new MC();
             // Act
             double pris = suzuki.Pris();
-            double discountedPris = 0;
-            if (suzuki.WeekendRabat)
-            {
-                discountedPris = suzuki.Pris();
-            }
-            else if (!suzuki.WeekendRabat)
-            {
-                pris = suzuki.Pris();
-            }
             
             // Assert
-            if (suzuki.WeekendRabat)
-            {
-                Assert.AreEqual(100, discountedPris);
-            }
-            else
-            {
                 Assert.AreEqual(125, pris);
-            }
         }
 
         [TestMethod]

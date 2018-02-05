@@ -8,7 +8,6 @@ namespace BilletLib
         public abstract string Nummerplade { get; set; }
         public abstract DayOfWeek Dato { get; set; }
         public abstract bool BrobizzBrugt { get; set; }
-        public abstract bool WeekendRabat { get; set; }
         public abstract bool Øresundsbroen { get; set; }
         public abstract int VehiclePrice { get; set; }
         public abstract string TypeAfKøretøj();
