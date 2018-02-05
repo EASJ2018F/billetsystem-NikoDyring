@@ -16,6 +16,11 @@ namespace BilletLib
         public override bool Øresundsbroen { get; set; }
         public override int VehiclePrice { get; set; }
 
+        /// <summary>
+        /// Returnere typen af køretøj i form af en string, alt efter om Øresundsbroen er true.
+        /// </summary>
+        /// <returns></returns>
+
         public override string TypeAfKøretøj()
         {
             if (Øresundsbroen)
@@ -26,6 +31,11 @@ namespace BilletLib
             return "Bil";
         }
 
+        /// <summary>
+        /// Returnere nummerpladen hvis længden af nummerpladen er mindre end 7, ellers kaster den en exception.
+        /// </summary>
+        /// <returns></returns>
+
         public override int LængdeAfNummerplade()
         {
             if (Nummerplade.Length > 7 || Nummerplade.Length < 0)
@@ -35,6 +45,11 @@ namespace BilletLib
 
             return Nummerplade.Length;
         }
+
+        /// <summary>
+        /// Udregner vores weekend rabat. Hvis vi ikke kører over Øresundsbroen er bil-prisen 240. 
+        /// </summary>
+        /// <returns></returns>
 
         public int WeekendRabatIBil()
         {
@@ -73,6 +88,10 @@ namespace BilletLib
 
             return VehiclePrice;
         }
+
+        /// <summary>
+        /// Constructor som sætter vores dato til hverdagen idag. Udover det sætter vi vores bools til False. 
+        /// </summary>
 
         public Bil()
         {

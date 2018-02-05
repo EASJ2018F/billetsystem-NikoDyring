@@ -12,6 +12,11 @@ namespace BilletLib
         public abstract string TypeAfKøretøj();
         public abstract int LængdeAfNummerplade();
 
+        /// <summary>
+        /// Prismetoden som Udregner største delen af mulige priser. 
+        /// </summary>
+        /// <returns></returns>
+
         public int Pris()
         {
 
