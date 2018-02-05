@@ -63,9 +63,5 @@ namespace BilletLib
 
         }
 
-
-
-
-
     }
 }
