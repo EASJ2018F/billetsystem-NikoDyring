@@ -4,7 +4,6 @@ namespace BilletLib
 {
     public abstract class Vehicle
     {
-
         public abstract string Nummerplade { get; set; }
         public abstract bool BrobizzBrugt { get; set; }
         public abstract bool Øresundsbroen { get; set; }

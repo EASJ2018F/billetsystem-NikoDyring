@@ -11,6 +11,11 @@ namespace BilletLib
         public List<Vehicle> køretøjList;
         public double totalSum = 0;
 
+        /// <summary>
+        /// Udregner sum for alle køretøjer.
+        /// </summary>
+        /// <returns></returns>
+
         public double UdregnSum()
         {
             foreach (Vehicle køretøj in køretøjList)
